@@ -8,5 +8,12 @@ jobs:
     steps:
       - name: Print message
         run: echo "GitHub Actions is working"
+        
       - name: print docker version
         run: docker --version
+        
+      - name: run nginx container
+        run: docker run -d -p 8080:80 nginx:latest
+
+      - name: List running Containers
+        run: docker ps
